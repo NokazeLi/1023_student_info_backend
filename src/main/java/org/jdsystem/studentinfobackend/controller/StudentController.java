@@ -13,7 +13,7 @@ import java.util.List;
 public class StudentController {
     private final IStudentService studentService;
     @DeleteMapping("/delete/{id}")
-    public void deleteStudent(@PathVariable Long id) {
+    public void deleteStudent(@PathVariable Long id){
         studentService.deleteStudent(id);
     }
 }
