@@ -1,6 +1,7 @@
 package org.jdsystem.studentinfobackend.sevice;
 
 import lombok.RequiredArgsConstructor;
+import org.jdsystem.studentinfobackend.exception.StudentNotFoundException;
 import org.jdsystem.studentinfobackend.model.Student;
 import org.jdsystem.studentinfobackend.repository.StudentRepository;
 import org.springframework.stereotype.Service;
