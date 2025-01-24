@@ -1,4 +1,3 @@
-
 package org.jdsystem.studentinfobackend.service;
 
 import lombok.RequiredArgsConstructor;
@@ -6,16 +5,13 @@ import org.jdsystem.studentinfobackend.exception.StudentAlreadyExistsException;
 import org.jdsystem.studentinfobackend.exception.StudentNotFoundException;
 import org.jdsystem.studentinfobackend.model.Student;
 import org.jdsystem.studentinfobackend.repository.StudentRepository;
-
 import org.springframework.stereotype.Service;
-
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-
-public class StudentService implements IStudentService {
+public class StudentService implements IStudentService{
     private final StudentRepository studentRepository;
 
     //添加学生接口的业务逻辑
@@ -25,6 +21,12 @@ public class StudentService implements IStudentService {
             throw new StudentAlreadyExistsException(student.getEmail()+ " already exists");
         }
         return studentRepository.save(student);
+    }
+
+    @Override
+    public Student getStudentById(Long id) {
+        return studentRepository.findById(id)
+                .orElseThrow(() -> new StudentNotFoundException("Sorry, no student found with the Id :" + id));
     }
     //查询所有学生接口的业务逻辑
     @Override
