@@ -13,6 +13,7 @@ class StudentInfoBackEndApplicationTests {
 
 	@Test
 	void contextLoads() {
+<<<<<<< HEAD
 		long id = 1;
 		Student student = new Student();
 		student.setFirstName("John");
@@ -23,6 +24,17 @@ class StudentInfoBackEndApplicationTests {
 
 		System.out.println(student.getFirstName());
 
+=======
+//		Student student = new Student();
+//		student.setFirstName("qqq");
+//		student.setLastName("sss");
+//		student.setEmail("effdds");
+//		student.setDepartment("sdadfa");
+//		studentService.addStudent(student);
+
+
+		System.out.println("student"+studentService.getStudents());
+>>>>>>> develop
 	}
 
 }
