@@ -22,11 +22,14 @@ public class StudentService implements IStudentService{
         }
         return studentRepository.save(student);
     }
-    //查询所有学生接口的业务逻辑
+
     @Override
     public Student getStudentById(Long id) {
         return studentRepository.findById(id)
-                .orElseThrow(() -> new StudentNotFoundException("Sorry, no student found with the Id :" +id));
+                .orElseThrow(() -> new StudentNotFoundException("Sorry, no student found with the Id :" + id));
+    }
+    //查询所有学生接口的业务逻辑
+    @Override
     public List<Student> getStudents() {
         return studentRepository.findAll();
     }

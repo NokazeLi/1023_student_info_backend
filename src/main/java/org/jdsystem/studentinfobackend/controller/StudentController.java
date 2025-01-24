@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 
-
 @RestController
 @RequestMapping("/students")
 @RequiredArgsConstructor
@@ -21,8 +20,6 @@ public class StudentController {
     public Student getStudentById(@PathVariable Long id){
         return studentService.getStudentById(id);
     }
-}
-    private final IStudentService studentService;
 
     @PostMapping("/add")
     public Student addStudent(@RequestBody Student student){
@@ -42,3 +39,6 @@ public class StudentController {
     public void deleteStudent(@PathVariable Long id){
         studentService.deleteStudent(id);
     }
+}
+
+
