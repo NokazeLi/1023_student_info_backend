@@ -1,5 +1,8 @@
 package org.jdsystem.studentinfobackend.repository;
 
-public interface StudentRepository {
-    //士大夫但是
+import org.jdsystem.studentinfobackend.model.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface StudentRepository extends JpaRepository<Student, Long> {
+
 }
