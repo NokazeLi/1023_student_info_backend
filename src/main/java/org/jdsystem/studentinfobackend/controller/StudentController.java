@@ -2,7 +2,7 @@ package org.jdsystem.studentinfobackend.controller;
 
 import lombok.RequiredArgsConstructor;
 
-import org.jdsystem.studentinfobackend.sevice.IStudentService;
+import org.jdsystem.studentinfobackend.service.IStudentService;
 import org.springframework.web.bind.annotation.*;
 import org.jdsystem.studentinfobackend.model.Student;
 import org.springframework.http.HttpStatus;
