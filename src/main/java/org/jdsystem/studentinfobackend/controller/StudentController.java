@@ -17,11 +17,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class StudentController {
     private final IStudentService studentService;
-    @GetMapping
+    @GetMapping("/get")
     public ResponseEntity<List<Student>> getStudents() {
         return new ResponseEntity<>(studentService.getStudents(), HttpStatus.FOUND);
     }
-    @PostMapping
+    @PostMapping("/add")
     public Student addStudent(Student student){
         return studentService.addStudent(student);
     }

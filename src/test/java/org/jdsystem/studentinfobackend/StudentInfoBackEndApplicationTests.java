@@ -13,12 +13,12 @@ class StudentInfoBackEndApplicationTests {
 
 	@Test
 	void contextLoads() {
-		Student student = new Student();
-		student.setFirstName("qqq");
-		student.setLastName("sss");
-		student.setEmail("effdds");
-		student.setDepartment("sdadfa");
-		studentService.addStudent(student);
+//		Student student = new Student();
+//		student.setFirstName("qqq");
+//		student.setLastName("sss");
+//		student.setEmail("effdds");
+//		student.setDepartment("sdadfa");
+//		studentService.addStudent(student);
 
 
 		System.out.println("student"+studentService.getStudents());
