@@ -13,6 +13,7 @@ import org.hibernate.annotations.NaturalId;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+//1231
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
