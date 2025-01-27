@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
-
+@CrossOrigin("http://localhost:3000") //跨域配置
 @RestController
 @RequestMapping("/students")
 @RequiredArgsConstructor
