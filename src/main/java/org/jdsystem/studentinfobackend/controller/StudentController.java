@@ -1,12 +1,6 @@
 package org.jdsystem.studentinfobackend.controller;
 
 import lombok.RequiredArgsConstructor;
-
-
-
-
-
-
 import org.jdsystem.studentinfobackend.service.IStudentService;
 import org.springframework.web.bind.annotation.*;
 import org.jdsystem.studentinfobackend.model.Student;
@@ -16,12 +10,16 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 
-
 @RestController
 @RequestMapping("/students")
 @RequiredArgsConstructor
 public class StudentController {
     private final IStudentService studentService;
+
+    @GetMapping("/student/{id}")
+    public Student getStudentById(@PathVariable Long id){
+        return studentService.getStudentById(id);
+    }
 
     @PostMapping("/add")
     public Student addStudent(@RequestBody Student student){
@@ -41,9 +39,6 @@ public class StudentController {
     public void deleteStudent(@PathVariable Long id){
         studentService.deleteStudent(id);
     }
-
-
-
-
 }
+
 
