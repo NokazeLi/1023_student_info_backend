@@ -11,7 +11,6 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-
 public class StudentService implements IStudentService{
     private final StudentRepository studentRepository;
 
@@ -23,10 +22,26 @@ public class StudentService implements IStudentService{
         }
         return studentRepository.save(student);
     }
+
+    @Override
+    public Student getStudentById(Long id) {
+        return studentRepository.findById(id)
+                .orElseThrow(() -> new StudentNotFoundException("Sorry, no student found with the Id :" + id));
+    }
     //查询所有学生接口的业务逻辑
     @Override
     public List<Student> getStudents() {
         return studentRepository.findAll();
+    }
+    @Override
+    public Student updateStudent(Student student, Long id) {
+        return studentRepository.findById(id).map(st -> {
+            st.setFirstName(student.getFirstName());
+            st.setLastName(student.getLastName());
+            st.setEmail(student.getEmail());
+            st.setDepartment(student.getDepartment());
+            return studentRepository.save(st);
+        }).orElseThrow(()-> new StudentNotFoundException("Sorry,this student could not be found."));
     }
     //根据ID删除学生记录的接口的业务逻辑
     @Override
@@ -36,6 +51,7 @@ public class StudentService implements IStudentService{
         }
         studentRepository.deleteById(id);
     }
+
     private boolean studentAlreadyExists(String email) {
         return studentRepository.findByEmail(email).isPresent();
     }
