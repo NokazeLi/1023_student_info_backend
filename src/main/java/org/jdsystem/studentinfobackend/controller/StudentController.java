@@ -21,11 +21,11 @@ public class StudentController {
         return studentService.getStudentById(id);
     }
 
-    @PostMapping("/add")
+    @PostMapping
     public Student addStudent(@RequestBody Student student){
         return studentService.addStudent(student);
     }
-    @GetMapping("/get")
+    @GetMapping
     public ResponseEntity<List<Student>> getStudents() {
         return new ResponseEntity<>(studentService.getStudents(), HttpStatus.FOUND);
     }
